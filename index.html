@@ -1799,6 +1799,17 @@ function router(opts) {
   });
 }
 window.addEventListener('hashchange', function () { router(); });
+/* Link menu (#/...) selalu ditangani di dalam aplikasi. Di web app Apps Script, navigasi biasa bisa membuka
+   halaman dalam (userCodeAppPanel) di tab utama dan tampil putih kosong. */
+document.addEventListener('click', function (e) {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var a = e.target.closest && e.target.closest('a[href^="#"]');
+  if (!a || a.hasAttribute('download') || a.getAttribute('target') === '_blank') return;
+  var href = a.getAttribute('href');
+  if (href === '#' || href.indexOf('#/') !== 0) return;
+  e.preventDefault();
+  go(href);
+});
 
 /* ---------- sinkron real-time ---------- */
 function startPolling() {
