@@ -3,7 +3,7 @@
   "short_name": "ELPI Docking",
   "description": "ELPI Docking Specialist Monitoring: jadwal survey, docking plan, biaya, dan monitoring pasca-docking armada.",
   "lang": "id",
-  "id": "./",
+  "id": "/elpidockinginstaller/",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

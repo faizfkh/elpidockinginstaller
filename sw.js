@@ -1,6 +1,6 @@
 /* Service worker installer ELPI Docking Monitor.
  * Hanya menyimpan cangkang halaman installer (bukan data). Data selalu diambil langsung dari Apps Script / Google Sheets. */
-const CACHE = 'elpi-docking-shell-v3';
+const CACHE = 'elpi-docking-shell-v4';
 const SHELL = ['./', 'index.html', 'config.js', 'manifest.webmanifest', 'icons/logo.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/favicon-32.png', 'icons/elpi.ico'];
 
 self.addEventListener('install', (e) => {
